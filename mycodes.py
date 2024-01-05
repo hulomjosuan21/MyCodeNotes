@@ -1,4 +1,4 @@
-codes = {
+javaCodes = {
     "Replace Image":
         '''
         public static File replaceImageFile(File oldFile, File newFile) {
@@ -205,3 +205,31 @@ codes = {
         image.release();
         '''
 }
+
+cmdCommands = {"Hide file":"attrib +h +s +r filename",
+               "Unhide file":"attrib -h -s -r filename"}
+
+jdbcCodes = {"Establish Connection":
+    '''
+public class Database {
+    private final String url = "jdbc:mysql://localhost:3306/schooldatabase?zeroDateTimeBehavior=CONVERT_TO_NULL";
+    private final String username = "root";
+    private final String password = "";
+    
+    protected static Connection connection;
+    protected static Statement statement;
+    protected static PreparedStatement prepare;   
+    protected static ResultSet result;
+    protected static ResultSetMetaData metaData;
+    
+    public Database(){
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Database.connection = DriverManager.getConnection(url, username, password);
+            Database.statement = connection.createStatement();
+        }catch(ClassNotFoundException | SQLException e){
+            e.printStackTrace();
+        }              
+    }  
+}    
+    '''}

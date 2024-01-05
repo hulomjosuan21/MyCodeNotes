@@ -1,12 +1,26 @@
 import streamlit as st
-from mycodes import codes
+import mycodes
 
 st.set_page_config("My Code Notes", layout='centered', initial_sidebar_state='auto')
 def main():
-    for k, v in codes.items(): 
-        st.subheader(k)
-        st.code(v, language='java')
-        st.markdown("---")
+    
+    page = st.sidebar.selectbox("Choose a page",["Java","Cmd commands","JDBC"])
+    
+    if page == "Java":
+        for k, v in mycodes.javaCodes.items(): 
+            st.subheader(k)
+            st.code(v, language='java')
+            st.markdown("---")
+    elif page == "Cmd commands":
+        for k, v in mycodes.cmdCommands.items(): 
+            st.subheader(k)
+            st.code(v, language='cmd')
+            st.markdown("---")
+    elif page == "JDBC":
+        for k, v in mycodes.jdbcCodes.items(): 
+            st.subheader(k)
+            st.code(v, language='java')
+            st.markdown("---")        
     
     st.write("Copyright © 2024 Josuan. All rights reserved.")
 
