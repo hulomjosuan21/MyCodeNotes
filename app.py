@@ -4,7 +4,7 @@ import mycodes
 st.set_page_config("My Code Notes", layout='centered', initial_sidebar_state='auto')
 def main():
     
-    page = st.sidebar.selectbox("Choose a page",["Java","Cmd commands","JDBC"])
+    page = st.sidebar.selectbox("Choose a page",["Java","Cmd commands","JDBC","Sumo Robot Code"])
     
     if page == "Java":
         for k, v in mycodes.javaCodes.items(): 
@@ -21,7 +21,11 @@ def main():
             st.subheader(k)
             st.code(v, language='java')
             st.markdown("---")        
-    
+    elif page == "Sumo Robot Code":
+        for k, v in mycodes.robotCode.items(): 
+            st.subheader(k)
+            st.code(v, language='c')
+            st.markdown("---")
     st.write("Copyright © 2024 Josuan. All rights reserved.")
 
 if __name__ == '__main__':
