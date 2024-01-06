@@ -335,3 +335,22 @@ void loop() {
   unsigned int distance2 = sonar2.ping_cm();
 }
     '''}
+
+javaSyntax = {"Primitive data type":
+    '''
+int myNum = 5;
+float myFloatNum = 5.99f;
+char myLetter = 'D';
+boolean myBool = true;
+String myText = "Hello";1            
+    ''',
+    "Non-Primitive data type":
+    '''
+Byte myByte = 100;
+Integer myInt = 100000;
+Long myLong = 100000L;
+Float myFloat = 3.14f;
+Double myDouble = 3.14159;
+Boolean myBoolean = true;
+Character myChar = 'A';
+    '''}
